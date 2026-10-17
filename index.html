@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de Victorine, étudiante en Licence Professionnelle. Découvrez mes projets, dont une application de suivi médical pédiatrique, et mes compétences en développement web.">
+    <title>Victorine | Portfolio Licence Pro</title>
+
+    <!-- Tailwind CSS via CDN (pour démarrer rapidement) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Configuration de Tailwind pour le Dark Mode et les Polices -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#0f766e', // Bleu sarcelle / Teal
+                        darkbg: '#111827',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Polices Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="font-sans bg-gray-50 text-gray-900 dark:bg-darkbg dark:text-gray-100 transition-colors duration-300">
+
+    <!-- =========================================
+         NAVIGATION (Header)
+    ========================================== -->
+    <header class="fixed top-0 left-0 w-full bg-white/90 dark:bg-darkbg/90 backdrop-blur-sm z-50 shadow-sm">
+        <nav class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo / Nom -->
+            <a href="#accueil" class="font-poppins text-xl font-bold text-primary dark:text-white">
+                Victorine.
+            </a>
+
+            <!-- Liens Desktop -->
+            <ul class="hidden md:flex space-x-8 font-medium">
+                <li><a href="#accueil" class="hover:text-primary transition-colors">Accueil</a></li>
+                <li><a href="#a-propos" class="hover:text-primary transition-colors">À propos</a></li>
+                <li><a href="#projets" class="hover:text-primary transition-colors">Projets</a></li>
+                <li><a href="#competences" class="hover:text-primary transition-colors">Compétences</a></li>
+                <li><a href="#contact" class="hover:text-primary transition-colors">Contact</a></li>
+            </ul>
+
+            <!-- Boutons Droite (Dark Mode + Burger) -->
+            <div class="flex items-center space-x-4">
+                <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors">
+                    <!-- Icône Soleil -->
+                    <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    <!-- Icône Lune -->
+                    <svg class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                </button>
+                
+                <!-- Bouton Menu Mobile -->
+                <button id="menu-btn" class="md:hidden p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-800">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Menu Mobile Déroulant -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-darkbg border-t border-gray-200 dark:border-gray-800">
+            <ul class="flex flex-col px-6 py-4 space-y-4 font-medium">
+                <li><a href="#accueil" class="block hover:text-primary">Accueil</a></li>
+                <li><a href="#a-propos" class="block hover:text-primary">À propos</a></li>
+                <li><a href="#projets" class="block hover:text-primary">Projets</a></li>
+                <li><a href="#competences" class="block hover:text-primary">Compétences</a></li>
+                <li><a href="#contact" class="block hover:text-primary">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- =========================================
+         SECTION ACCUEIL (Hero)
+    ========================================== -->
+    <section id="accueil" class="min-h-screen flex items-center justify-center pt-20 pb-12 px-6">
+        <div class="max-w-4xl text-center">
+            <span class="inline-block px-4 py-1 mb-6 text-sm font-semibold text-primary bg-teal-50 dark:bg-teal-900/30 rounded-full">
+                Disponible pour un stage / alternance
+            </span>
+            <h1 class="font-poppins text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                Bonjour, je suis Victorine 👋
+                <br>
+                <span class="text-primary">Développeuse Web</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-10 max-w-2xl mx-auto">
+                Étudiante en Licence Professionnelle, je conçois des applications web modernes et ergonomiques. Spécialisée en HTML, CSS, React et PHP.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#projets" class="px-8 py-3 bg-primary text-white font-semibold rounded-lg shadow-lg hover:shadow-xl hover:opacity-90 transition-all">
+                    Voir mes projets
+                </a>
+                <a href="CV_victorine.pdf" download class="px-8 py-3 border-2 border-primary text-primary font-semibold rounded-lg hover:bg-primary hover:text-white transition-all">
+    Télécharger mon CV
+</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+         SECTION À PROPOS
+    ========================================== -->
+    <section id="a-propos" class="py-20 px-6 bg-white dark:bg-darkbg">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="font-poppins text-3xl md:text-4xl font-bold mb-12 text-center">À propos de moi</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="flex justify-center">
+                    <!-- Emplacement pour ta photo de profil -->
+                    <div class="w-64 h-64 rounded-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center text-gray-500">
+                        <img src="photo.jpg" alt="Photo de Victorine" class="w-64 h-64 rounded-full object-cover object-top shadow-lg">
+                    </div>
+                </div>
+                <div class="space-y-4 text-gray-700 dark:text-gray-300">
+                    <p>
+                        Passionnée par le développement web et titulaire d'un BTS, je poursuis actuellement mon parcours en Licence Professionnelle. Je m'intéresse particulièrement à la création d'interfaces utilisateur réactives et à la résolution de problèmes techniques complexes.
+                    </p>
+                    <p>
+                        Mon objectif est de mettre mes compétences au service de projets innovants tout en continuant à apprendre au sein d'une équipe dynamique.
+                    </p>
+                    <!-- Soft Skills -->
+                    <div class="flex flex-wrap gap-2 pt-4">
+                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm">Rigoureuse</span>
+                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm">Curieuse</span>
+                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm">Esprit d'équipe</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+         SECTION PROJETS (Emplacement pour le composant React plus tard)
+    ========================================== -->
+    <section id="projets" class="py-20 px-6 bg-gray-50 dark:bg-gray-900">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="font-poppins text-3xl md:text-4xl font-bold mb-4 text-center">Mes Réalisations</h2>
+            <p class="text-center text-gray-600 dark:text-gray-400 mb-12">Voici les projets sur lesquels j'ai travaillé récemment.</p>
+            
+            <!-- Les boutons de filtre et les cartes seront gérés par React plus tard -->
+            <div id="projets-react-root" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Carte Projet Factice 1 -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow">
+                    <img src="capture1.png" alt="Capture d'écran du site e-commerce" class="h-48 w-full object-cover">
+                    
+                    <div class="p-6">
+                        <h3 class="font-poppins text-xl font-bold mb-2">Clinique Pédiatrique (Mémoire)</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">Application de suivi médical pour une clinique pédiatrique.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs px-2 py-1 bg-teal-50 text-primary dark:bg-teal-900/30 rounded">html</span>
+                            <span class="text-xs px-2 py-1 bg-teal-50 text-primary dark:bg-teal-900/30 rounded">PHP</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Ajoute d'autres cartes factices ici pour la mise en page -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow">
+                    <img src="capture3.png" alt="Capture d'écran du site e-commerce" class="h-48 w-full object-cover">
+                    
+                    <div class="p-6">
+                        <h3 class="font-poppins text-xl font-bold mb-2">TechSop</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">Site de commande des materiels informatique.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs px-2 py-1 bg-teal-50 text-primary dark:bg-teal-900/30 rounded">HTML/CSS</span>
+                            <span class="text-xs px-2 py-1 bg-teal-50 text-primary dark:bg-teal-900/30 rounded">JS</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow">
+                    <img src="capture2.png" alt="Capture d'écran du site traiteur" class="h-48 w-full object-cover">
+                    
+                    <div class="p-6">
+                        <h3 class="font-poppins text-xl font-bold mb-2">Traiteur ivoirien</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">Site de service trateur africain, les delices de chez nous.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs px-2 py-1 bg-teal-50 text-primary dark:bg-teal-900/30 rounded">html/css</span>
+                            <span class="text-xs px-2 py-1 bg-teal-50 text-primary dark:bg-teal-900/30 rounded">PHP</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+         SECTION COMPÉTENCES
+    ========================================== -->
+    <section id="competences" class="py-20 px-6 bg-white dark:bg-darkbg">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="font-poppins text-3xl md:text-4xl font-bold mb-12 text-center">Compétences Techniques</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div class="p-6 border border-gray-200 dark:border-gray-800 rounded-lg hover:border-primary transition-colors">
+                    <h3 class="font-bold mb-2">Frontend</h3>
+                    <p class="text-sm text-gray-500">HTML5, CSS3, JavaScript, React, Tailwind CSS</p>
+                </div>
+                <div class="p-6 border border-gray-200 dark:border-gray-800 rounded-lg hover:border-primary transition-colors">
+                    <h3 class="font-bold mb-2">Backend</h3>
+                    <p class="text-sm text-gray-500">PHP, Base de données (SQL)</p>
+                </div>
+                <div class="p-6 border border-gray-200 dark:border-gray-800 rounded-lg hover:border-primary transition-colors">
+                    <h3 class="font-bold mb-2">Outils</h3>
+                    <p class="text-sm text-gray-500">Git, GitHub, VS Code, Figma</p>
+                </div>
+                <div class="p-6 border border-gray-200 dark:border-gray-800 rounded-lg hover:border-primary transition-colors">
+                    <h3 class="font-bold mb-2">Méthodes</h3>
+                    <p class="text-sm text-gray-500">Responsive Design, Accessibilité, SEO</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+         SECTION CONTACT
+    ========================================== -->
+    <section id="contact" class="py-20 px-6 bg-gray-50 dark:bg-gray-900">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="font-poppins text-3xl md:text-4xl font-bold mb-4 text-center">Contactez-moi</h2>
+            <p class="text-center text-gray-600 dark:text-gray-400 mb-12">N'hésitez pas à me contacter pour une opportunité professionnelle ou simplement pour échanger.</p>
+            
+            <form action="contact.php" method="POST" class="space-y-6 bg-white dark:bg-gray-800 p-8 rounded-xl shadow-md">
+                <div>
+                    <label for="name" class="block text-sm font-medium mb-2">Nom complet</label>
+                    <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 dark:bg-gray-900 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all">
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-medium mb-2">Email</label>
+                    <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 dark:bg-gray-900 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all">
+                </div>
+                <div>
+                    <label for="message" class="block text-sm font-medium mb-2">Message</label>
+                    <textarea id="message" name="message" rows="5" required class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 dark:bg-gray-900 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"></textarea>
+                </div>
+                <button type="submit" class="w-full py-3 bg-primary text-white font-semibold rounded-lg hover:opacity-90 transition-opacity">
+                    Envoyer le message
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+    <footer class="py-8 px-6 bg-white dark:bg-darkbg border-t border-gray-200 dark:border-gray-800">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <p class="text-sm text-gray-500">© <span id="year"></span> Victorine. Tous droits réservés.</p>
+            <div class="flex space-x-6">
+                <a href="#" class="text-gray-500 hover:text-primary transition-colors">LinkedIn</a>
+                <a href="#" class="text-gray-500 hover:text-primary transition-colors">GitHub</a>
+                <a href="mailto:victorine@email.com" class="text-gray-500 hover:text-primary transition-colors">Email</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- =========================================
+         SCRIPTS JAVASCRIPT
+    ========================================== -->
+    <script>
+        // Menu Mobile
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Fermer le menu quand on clique sur un lien
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Dark Mode Toggle (sera amélioré par React plus tard si besoin)
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        // Vérifier le thème sauvegardé ou les préférences système
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+        } else {
+            html.classList.remove('dark');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
+        });
+
+        // Année dynamique pour le footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
